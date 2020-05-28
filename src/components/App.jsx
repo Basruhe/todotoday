@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ADD_GOAL } from "../constants";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
             <input className="form-control" placeholder="I have to.." />
           </div>
         </div>
-        <button type="button" classname="btn btn-success">
+        <button type="button" className="btn btn-success">
           Add Goal
         </button>
       </div>
