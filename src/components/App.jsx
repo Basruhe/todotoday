@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ADD_GOAL } from "../constants";
-// from connect: mapstatetoprops, mapdispatchtoprops
+// imported from connect: mapstatetoprops, mapdispatchtoprops
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal } from "../actions";
