@@ -16,7 +16,7 @@ class App extends Component {
   addGoal() {
     console.log("this.state contains:", this.state);
     console.log("this", this);
-    this.props(addReminder(this.state.text)
+    this.props.addGoal(this.state.text);
   }
 
   render() {
@@ -45,7 +45,7 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addGoal, dispatch });
+  return bindActionCreators({ addGoal }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(App);
