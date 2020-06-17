@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal } from "../actions";
 
-// 7?
-//8
+// 7? might have missed something here
+// 8 currently here
 
 class App extends Component {
   constructor(props) {
