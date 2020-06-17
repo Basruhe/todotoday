@@ -18,14 +18,25 @@ class App extends Component {
 
   addGoal() {
     console.log("this.state contains:", this.state);
-    console.log("this", this);
+    console.log("this.props contains:", this.props);
     this.props.addGoal(this.state.text);
   }
 
-  renderGoals() {
-    const { goals } = this.props;
-    console.log(goals);
-  }
+  // renderGoals() {
+  //   const { goals } = this.props;
+  //   return (
+  //     <ul className="list-group col-sm-4">
+  //       {goals.map((goals) => {
+  //         return (
+  //           <li key={goals.id} className="list-group-item">
+  //             <div>{goals.text}</div>
+  //           </li>
+  //         );
+  //       })}
+  //     </ul>
+  //   );
+  //   console.log(goals);
+  // }
 
   render() {
     return (
@@ -40,7 +51,7 @@ class App extends Component {
             />
           </div>
         </div>
-        {this.renderGoals()}
+        {/* {this.renderGoals()} */}
         <button
           type="button"
           className="btn btn-success"
