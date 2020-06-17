@@ -5,6 +5,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal } from "../actions";
 
+// 7?
+//8
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +20,11 @@ class App extends Component {
     console.log("this.state contains:", this.state);
     console.log("this", this);
     this.props.addGoal(this.state.text);
+  }
+
+  renderGoals() {
+    const { goals } = this.props;
+    console.log(goals);
   }
 
   render() {
@@ -32,6 +40,7 @@ class App extends Component {
             />
           </div>
         </div>
+        {this.renderGoals()}
         <button
           type="button"
           className="btn btn-success"
