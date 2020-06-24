@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ADD_GOAL } from "../constants";
 // imported from connect: mapstatetoprops, mapdispatchtoprops
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -13,7 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       text: "",
-      id: "",
+      dueDate: "",
     };
   }
 
@@ -26,18 +25,18 @@ class App extends Component {
   renderGoals() {
     // use this es6 for when value names and property names are exactly how you want them to stay
     const { goals } = this.props;
+    console.log(goals);
     return (
       <ul className="list-group col-sm-4">
         {goals.map((goal) => {
           return (
-            <li key={goals.id} className="list-group-item">
-              <div>{goals.text}</div>
+            <li key={goal.id} className="list-group-item">
+              <div>{goal.text}</div>
             </li>
           );
         })}
       </ul>
     );
-    console.log(goals);
   }
 
   render() {
@@ -75,10 +74,10 @@ function mapStateToProps(state) {
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ addGoal }, dispatch);
-// }
-// export default connect(null, mapDispatchToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addGoal }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 // alternative:
-export default connect(mapStateToProps, { addGoal })(App);
+// export default connect(mapStateToProps, { addGoal })(App);
