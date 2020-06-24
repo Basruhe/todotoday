@@ -12,6 +12,7 @@ const goals = (state = [], action) => {
   switch (action.type) {
     case ADD_GOAL:
       goals = [...state, goal(action)];
+      break;
     default:
       return state;
   }
