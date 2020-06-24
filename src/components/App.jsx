@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       text: "",
+      id: "",
     };
   }
 
@@ -39,6 +40,7 @@ class App extends Component {
   // }
 
   render() {
+    console.log("this.props", this.props);
     return (
       <div className="App">
         <div className="title">ToDoToDay</div>
@@ -64,8 +66,17 @@ class App extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addGoal }, dispatch);
+function mapStateToProps(state) {
+  console.log("state", state);
+  return {
+    goals: state,
+  };
 }
 
-export default connect(null, mapDispatchToProps)(App);
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ addGoal }, dispatch);
+// }
+// export default connect(null, mapDispatchToProps)(App);
+
+// alternative:
+export default connect(mapStateToProps, { addGoal })(App);

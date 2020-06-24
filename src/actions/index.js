@@ -7,6 +7,6 @@ export const addGoal = (text, dueDate) => {
     text: text,
     dueDate: dueDate,
   };
-  console.log("Following action submitted with addGoal", action);
+  console.log("Following action is submitted with addGoal", action);
   return action;
 };
