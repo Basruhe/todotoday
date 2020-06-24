@@ -23,21 +23,22 @@ class App extends Component {
     this.props.addGoal(this.state.text);
   }
 
-  // renderGoals() {
-  //   const { goals } = this.props;
-  //   return (
-  //     <ul className="list-group col-sm-4">
-  //       {goals.map((goals) => {
-  //         return (
-  //           <li key={goals.id} className="list-group-item">
-  //             <div>{goals.text}</div>
-  //           </li>
-  //         );
-  //       })}
-  //     </ul>
-  //   );
-  //   console.log(goals);
-  // }
+  renderGoals() {
+    // use this es6 for when value names and property names are exactly how you want them to stay
+    const { goals } = this.props;
+    return (
+      <ul className="list-group col-sm-4">
+        {goals.map((goal) => {
+          return (
+            <li key={goals.id} className="list-group-item">
+              <div>{goals.text}</div>
+            </li>
+          );
+        })}
+      </ul>
+    );
+    console.log(goals);
+  }
 
   render() {
     console.log("this.props", this.props);
@@ -53,7 +54,7 @@ class App extends Component {
             />
           </div>
         </div>
-        {/* {this.renderGoals()} */}
+
         <button
           type="button"
           className="btn btn-success"
@@ -61,6 +62,7 @@ class App extends Component {
         >
           Add Goal
         </button>
+        {this.renderGoals()}
       </div>
     );
   }
