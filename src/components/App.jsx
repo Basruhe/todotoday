@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // imported from connect: mapstatetoprops, mapdispatchtoprops
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addGoal } from "../actions";
+import { addGoal, deleteGoal } from "../actions";
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +19,11 @@ class App extends Component {
     this.props.addGoal(this.state.text);
   }
 
+  deleteReminder() {
+    console.log("deleting the following:", id);
+    console.log("this.props", this.props);
+  }
+
   renderGoals() {
     // use this es6 for when value names and property names are exactly how you want them to stay
     const { goals } = this.props;
@@ -29,6 +34,7 @@ class App extends Component {
           return (
             <li key={goal.id} className="list-group-item">
               <div>{goal.text}</div>
+              <div className="list-item delete-button" onClick={() => this.deleteReminder(reminder.id)}></li>>&#x2715;</div></div>
             </li>
           );
         })}
@@ -72,7 +78,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addGoal }, dispatch);
+  return bindActionCreators({ addGoal, deleteGoal }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
