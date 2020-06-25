@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal } from "../actions";
 
-// 7? might have missed something here
-// 8 currently here
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title">ToDoToDay</div>
-        <div className="form-inline">
+        <div className="form-inline goal-form">
           <div className="form-group">
             <input
               className="form-control"
