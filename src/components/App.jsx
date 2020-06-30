@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   deleteReminder() {
-    console.log("deleting the following:", id);
+    // console.log("deleting the following:", id);
     console.log("this.props", this.props);
   }
 
@@ -34,7 +34,12 @@ class App extends Component {
           return (
             <li key={goal.id} className="list-group-item">
               <div>{goal.text}</div>
-              <div className="list-item delete-button" onClick={() => this.deleteReminder(reminder.id)}></li>>&#x2715;</div></div>
+              <div
+                className="list-item delete-button"
+                onClick={() => this.deleteReminder(goal.id)}
+              >
+                &#x2715;
+              </div>
             </li>
           );
         })}
