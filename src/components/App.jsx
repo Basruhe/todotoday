@@ -19,10 +19,11 @@ class App extends Component {
     this.props.addGoal(this.state.text);
   }
 
-  deleteReminder() {
+  deleteGoal(id) {
     // console.log("deleting the following:", id);
-    // console.log("this.props", this.props);
-    console.log("deleting goal with the following id:", this.id);
+    console.log("this.props", this.props);
+    console.log("deleting goal with the following id:", id);
+    // this.props.deleteGoal(this.id);
   }
 
   renderGoals() {
@@ -37,7 +38,7 @@ class App extends Component {
               <div>{goal.text}</div>
               <div
                 className="list-item delete-button"
-                onClick={() => this.deleteReminder(goal.id)}
+                onClick={() => this.deleteGoal(goal.id)}
               >
                 &#x2715;
               </div>
