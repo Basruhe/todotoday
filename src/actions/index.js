@@ -7,7 +7,7 @@ export const addGoal = (text, dueDate) => {
     text: text,
     dueDate: dueDate,
   };
-  console.log("Following action is submitted with addGoal", action);
+  console.log("(actions) Action submitted with addGoal: ", action);
   return action;
 };
 
@@ -16,6 +16,6 @@ export const deleteGoal = (id) => {
     type: DELETE_GOAL,
     id,
   };
-  console.log("Action submitted through deleteGoal:", action);
+  console.log("(actions) Action submitted through deleteGoal: ", action);
   return action;
 };

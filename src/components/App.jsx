@@ -14,20 +14,21 @@ class App extends Component {
   }
 
   addGoal() {
-    console.log("this.state contains:", this.state);
-    console.log("this.props contains:", this.props);
+    // console.log("(App) this.state contains:", this.state);
+    // console.log("(App) this.props contains:", this.props);
     this.props.addGoal(this.state.text);
   }
 
   deleteReminder() {
     // console.log("deleting the following:", id);
-    console.log("this.props", this.props);
+    // console.log("this.props", this.props);
+    console.log("deleting goal with the following id:", this.id);
   }
 
   renderGoals() {
     // use this es6 for when value names and property names are exactly how you want them to stay
     const { goals } = this.props;
-    console.log(goals);
+    console.log("(render) Current goals:", goals);
     return (
       <ul className="list-group col-sm-4">
         {goals.map((goal) => {
