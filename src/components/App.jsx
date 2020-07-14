@@ -16,7 +16,8 @@ class App extends Component {
   addGoal() {
     // console.log("(App) this.state contains:", this.state);
     // console.log("(App) this.props contains:", this.props);
-    this.props.addGoal(this.state.text);
+    console.log("this.state.dueDate", this.state.dueDate);
+    this.props.addGoal(this.state.text, this.state.dueDate);
   }
 
   deleteGoal(id) {
@@ -60,6 +61,13 @@ class App extends Component {
               className="form-control"
               placeholder="I have to.."
               onChange={(event) => this.setState({ text: event.target.value })}
+            />
+            <input
+              className="form-control"
+              type="datetime-local"
+              onChange={(event) =>
+                this.setState({ dueDate: event.target.value })
+              }
             />
           </div>
         </div>

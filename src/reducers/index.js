@@ -4,8 +4,9 @@ const goal = (action) => {
   // let { text, dueDate } = action;
   console.log("current goal", goal);
   return {
-    text: action.text,
     id: Math.random(),
+    text: action.text,
+    dueDate: action.dueDate,
   };
 };
 
