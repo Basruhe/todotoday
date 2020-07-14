@@ -9,6 +9,12 @@ const goal = (action) => {
   };
 };
 
+const removeById = (state = [], id) => {
+  const goals = state.filter((reminder) => reminder.id !== id);
+  console.log("newly filtered goals", goals);
+  return goals;
+};
+
 const goals = (state = [], action) => {
   let goals = null;
   switch (action.type) {
@@ -17,6 +23,8 @@ const goals = (state = [], action) => {
       console.log("reminders as state (reducer log):", goals);
       return goals;
     case DELETE_GOAL:
+      // note: returns a new array rather than changing the state!
+      goals = removeById(state, action.id);
       return goals;
     default:
       return state;

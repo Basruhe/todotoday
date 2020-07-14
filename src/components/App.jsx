@@ -23,7 +23,7 @@ class App extends Component {
     // console.log("deleting the following:", id);
     console.log("this.props", this.props);
     console.log("deleting goal with the following id:", id);
-    // this.props.deleteGoal(this.id);
+    this.props.deleteGoal(id);
   }
 
   renderGoals() {
