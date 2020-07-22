@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal, deleteGoal } from "../actions";
+import moment from "moment";
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +37,17 @@ class App extends Component {
         {goals.map((goal) => {
           return (
             <li key={goal.id} className="list-group-item">
-              <div>{goal.text}</div>
+              <div className="list-item">
+                <div>{goal.text}</div>
+                <div>
+                  <em>
+                    {moment(new Date(goal.dueDate)).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )}
+                  </em>
+                  {/* {moment(new Date(goal.dueDate)).fromNow()} */}
+                </div>
+              </div>
               <div
                 className="list-item delete-button"
                 onClick={() => this.deleteGoal(goal.id)}
