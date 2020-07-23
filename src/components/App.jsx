@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addGoal, deleteGoal } from "../actions";
 import moment from "moment";
+import { persistStore, persistReducer } from "redux-persist";
 
 class App extends Component {
   constructor(props) {
@@ -45,7 +46,6 @@ class App extends Component {
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </em>
-                  {/* {moment(new Date(goal.dueDate)).fromNow()} */}
                 </div>
               </div>
               <div
